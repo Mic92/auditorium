@@ -1,5 +1,8 @@
 Auditorium::Application.routes.draw do
+
   ActiveAdmin.routes(self)
+
+  resources :videos
 
   resources :membership_requests, :only => [:index, :create, :destroy]
 
