@@ -1,1 +1,33 @@
-<h1>show</h1>
+<div class="container">
+	<div class="questiion-details">
+		<div class="question-voting"><%= @question.rating %></div><hr />
+		<div class="question-header">
+			<h1><%= @question.subject %></h1>
+		</div>
+		<div class="question-content">
+			<%= markdown @question.body %>
+		</div>
+		<hr />
+		<div class="question-footer">
+			<%= @question.author %>
+		</div>
+		<div class="comments">
+			# comments: <%= @question.comments.size %>
+			<% @question.comments.each do |comment| %>
+				<div class="comment"><%= comment_markdown comment.body %></div>
+				<hr />
+			<% end %>
+		</div>
+	</div>
+	<div class="answers">
+		<header>Answers</header>
+
+		<% @question.answers.each do |answer| %>
+			<div class="answer">
+				<%= markdown answer.body %>
+				<%= answer.author %>
+			</div>
+			<hr />
+		<% end %>
+	</div>
+</div>
