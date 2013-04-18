@@ -103,6 +103,11 @@ class Ability
         user.is_course_maintainer? mr.course or user.admin
       end
       
+      can :read, Video
+      can :manage, Video do |video|
+        user.is_course_maintainer? video.course
+      end
+      
     else # Gäste
       cannot :read, :all
     end

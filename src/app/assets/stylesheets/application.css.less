@@ -3,7 +3,6 @@
 *= require ie
 *= require jquery.ui.all
 *= require feedbacks
-*= require my_faculties
 */
 
 @import "variables";
@@ -132,11 +131,21 @@ h5, h6
   .well {
     padding:10px;
   }
+
+  .youtube-player-embed {
+    width:400px;
+    height:250px;
+  }
 }
 
 @media (max-width: 390px) {
   .hidden-little-phone {
     display:none;
+  }
+
+  .youtube-player-embed {
+    width:300px;
+    height:187.5px;
   }
 }
 
@@ -151,6 +160,11 @@ h5, h6
       padding:0;
       margin:0;
     }
+  }
+
+  .youtube-player-embed {
+    width:800px;
+    height:500px;
   }
 
 }
@@ -200,6 +214,11 @@ h5, h6
   #footer
   {
     padding: 15px 5px;
+  }
+
+  .youtube-player-embed {
+    width:640px;
+    height:400px;
   }
 }
 
@@ -272,6 +291,11 @@ h5, h6
       }
     }
   }
+
+  .youtube-player-embed {
+    width:800px;
+    height:500px;
+  }
 }
 
 
@@ -281,6 +305,11 @@ h5, h6
     & > header{
       height:60px;
     }
+  }
+
+  .youtube-player-embed {
+    width:800px;
+    height:500px;
   }
 }
 
@@ -1223,3 +1252,12 @@ a#tooCool {
   text-decoration: none;
 }
 
+.youtube-thumbnail {
+  width:100px;
+  height:62.5px;
+}
+
+.youtube-preview {
+  width:100%;
+  margin:10px 0;
+}

@@ -1,0 +1,34 @@
+<% if @video.errors.any? %>
+<div class="alert alert-error">
+  Something went wrong
+  <dl>
+    <% @video.errors.full_messages.each do |msg| %>
+    <dd><%= msg %></dd>
+    <% end %>
+  </dl>
+</div>
+<% end %>
+
+<div class="row center span8 well">
+    <%= form_for ([@course, @video]) do |f| %>
+      <div class="control-group">
+        <div class="controls">
+        
+        	<label for="url">Url:</label>
+           <%= f.url_field :uri, :placeholder => "URL of the video.", :class => "span8", :id => "title_field" %>
+
+					<label for="title">Title:</label>
+					<%= f.text_field :title, :placeholder => "Title of the video...", :class => "span8", :id => "title_field" %>
+
+          <label for="content_field">Description</label>
+          <%= f.text_area :description, :placeholder => "Description for the video", :class => "span8", :id => "content_field", :size => '10x8' %>
+        </div>
+        <% if params[:action].eql? 'new' %>
+        	<%= f.submit t('videos.new.submit'), class: 'btn btn-primary' %>
+        <% else %>
+        	<%= f.submit t('videos.edit.submit'), class: 'btn btn-primary' %>
+      	<% end %> 
+      </div>
+    <% end %>
+
+</div>

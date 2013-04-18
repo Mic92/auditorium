@@ -2,5 +2,9 @@
 
 FactoryGirl.define do
   factory :video do
+    title "MyString"
+    description "MyText"
+    comments ""
+    uri "MyString"
   end
 end

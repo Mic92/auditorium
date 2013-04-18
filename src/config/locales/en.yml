@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  videos:
+    new:
+      submit: 'Submit video'
+    edit:
+      submit: 'Update video'
+    action:
+      new: 'Add a new video'
+      edit: 'Update video'
+      created: 'The video has been successfully created.'
+      updated: 'The video has been successfully updated.'
+      destroyed: 'The video has been destroyed.'
