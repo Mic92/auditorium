@@ -322,7 +322,6 @@ DEPENDENCIES
   jquery-ui-themes
   kaminari
   less-rails
-  libv8 (~> 3.11.8)
   mailcatcher
   mathjax-rails
   memcache-client

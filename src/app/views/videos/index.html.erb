@@ -23,5 +23,5 @@
 	</div>
 <% else %>
 <hr />
-	<p class="hint">No videos available, yet. <%= link_to "#{t('videos.action.add')}.", new_course_video_path if can? :create, @course.videos.build %></p>
+	<p class="hint">No videos available, yet. <%= link_to "#{t('videos.action.new')}.", new_course_video_path if can? :create, @course.videos.build %></p>
 <% end %>
