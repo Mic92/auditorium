@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :create_user
   before_filter :set_current_user
+  before_filter :prepare_for_mobile
 
   rescue_from CanCan::AccessDenied do |exception|
     unless current_user
@@ -97,5 +98,20 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
+  end
+
+  # recognize mobile devices
+  def mobile_device?
+    if session[:mobile_param]
+      session[:mobile_param] == "1"
+    else
+      browser.mobile?
+    end
+  end
+  helper_method :mobile_device?
+
+  def prepare_for_mobile
+    session[:mobile_param] = params[:mobile] if params[:mobile]
+    request.format = :mobile if mobile_device?
   end
 end
